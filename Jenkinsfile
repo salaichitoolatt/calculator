@@ -11,11 +11,4 @@ pipeline {
                 sh "./gradlew test"
             }
         }
-        stage('SonarQube Analysis') {
-            def scannerHome = tool 'sonarqube-jenkins';
-            withSonarQubeEnv() {
-                sh "./gradlew sonar"
-            }
-        }
-    }
 }
